@@ -245,7 +245,9 @@ header nav .nav-sections ul > li > ul > li {
     width: 200px;
     top: 150%;
     padding: 16px;
-    background-color: var(--light-color);
+    background-color: var(--dark-color);
+    border: 1px solid rgb(255 255 255 / 10%);
+    border-radius: 8px;
     white-space: initial;
   }
 
@@ -258,7 +260,7 @@ header nav .nav-sections ul > li > ul > li {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid var(--dark-color);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
@@ -269,4 +271,35 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+header nav .nav-tools ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+header nav .nav-tools a {
+  font-size: var(--body-font-size-xs);
+  white-space: nowrap;
+}
+
+header nav .nav-tools li:last-child a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+header nav .nav-tools li:last-child a:hover {
+  background-color: rgb(255 255 255 / 10%);
+  border-color: rgb(255 255 255 / 60%);
+  text-decoration: none;
 }
