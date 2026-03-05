@@ -1,40 +1,35 @@
 /*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Madridistas Platinum - Design System
+ * Migrated from https://platinum.madridistas.com/es-es
  */
 
 :root {
   /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --background-color: #0a0a0a;
+  --light-color: #f3f5f8;
+  --dark-color: #222326;
+  --text-color: #fff;
+  --text-color-muted: #edeef2;
+  --text-color-subtle: #6d7175;
+  --link-color: #3e31fa;
+  --link-hover-color: #5549ff;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: 'RM Neue', rm-neue-fallback, sans-serif;
+  --heading-font-family: 'RM Neue', rm-neue-fallback, sans-serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-m: 18px;
+  --body-font-size-s: 16px;
+  --body-font-size-xs: 14px;
 
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  /* heading sizes (mobile-first) */
+  --heading-font-size-xxl: 36px;
+  --heading-font-size-xl: 28px;
+  --heading-font-size-l: 22px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
 
   /* nav height */
   --nav-height: 64px;
@@ -42,31 +37,30 @@
 
 /* fallback fonts */
 @font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
+  font-family: rm-neue-fallback;
+  size-adjust: 99.5%;
   src: local('Arial');
 }
 
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
+@media (width >= 600px) {
+  :root {
+    --heading-font-size-xxl: 48px;
+    --heading-font-size-xl: 36px;
+    --heading-font-size-l: 28px;
+    --heading-font-size-m: 24px;
+    --heading-font-size-s: 20px;
+    --heading-font-size-xs: 18px;
+  }
 }
 
 @media (width >= 900px) {
   :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
+    --heading-font-size-xxl: 72px;
+    --heading-font-size-xl: 48px;
+    --heading-font-size-l: 32px;
+    --heading-font-size-m: 28px;
+    --heading-font-size-s: 24px;
+    --heading-font-size-xs: 20px;
   }
 }
 
@@ -77,7 +71,8 @@ body {
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: 1.333;
+  letter-spacing: -0.02em;
 }
 
 body.appear {
@@ -107,9 +102,10 @@ h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1;
   scroll-margin: 40px;
+  color: var(--text-color);
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
@@ -129,6 +125,10 @@ blockquote {
   margin-bottom: 0.25em;
 }
 
+p {
+  color: var(--text-color-muted);
+}
+
 code,
 pre {
   font-size: var(--body-font-size-s);
@@ -137,7 +137,7 @@ pre {
 pre {
   padding: 16px;
   border-radius: 8px;
-  background-color: var(--light-color);
+  background-color: var(--dark-color);
   overflow-x: auto;
   white-space: pre;
 }
@@ -155,13 +155,12 @@ button {
 
 /* links */
 a:any-link {
-  color: var(--link-color);
+  color: var(--text-color);
   text-decoration: none;
   overflow-wrap: break-word;
 }
 
 a:hover {
-  color: var(--link-hover-color);
   text-decoration: underline;
 }
 
@@ -178,39 +177,43 @@ button.button {
   justify-content: center;
   max-width: 100%;
   margin: 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 16px 24px;
   font: inherit;
-  font-weight: 500;
-  line-height: 1.25;
+  font-weight: 400;
+  font-size: var(--body-font-size-m);
+  line-height: 1.333;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 a.button[aria-disabled="true"],
 button.button:disabled {
   cursor: not-allowed;
   pointer-events: none;
+  opacity: 0.5;
 }
 
+/* primary button - white solid on dark backgrounds */
 a.button.primary,
 button.button.primary {
-  border-color: var(--text-color);
-  background-color: var(--text-color);
-  color: var(--background-color);
+  border-color: #fff;
+  background-color: #fff;
+  color: #29395a;
 }
 
 a.button.primary:hover,
 a.button.primary:focus-visible,
 button.button.primary:hover,
 button.button.primary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--dark-color);
-  color: var(--light-color);
+  border-color: var(--text-color-muted);
+  background-color: var(--text-color-muted);
+  color: #0a0a0a;
 }
 
 a.button.primary[aria-disabled="true"],
@@ -219,14 +222,15 @@ a.button.primary[aria-disabled="true"]:focus-visible,
 button.button.primary:disabled,
 button.button.primary:disabled:hover,
 button.button.primary:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+  background-color: #292929;
+  border-color: #292929;
+  color: var(--text-color-subtle);
 }
 
+/* secondary button - outlined on dark backgrounds */
 a.button.secondary,
 button.button.secondary {
-  border-color: var(--text-color);
+  border-color: rgb(255 255 255 / 30%);
   background-color: transparent;
   color: var(--text-color);
 }
@@ -235,9 +239,9 @@ a.button.secondary:hover,
 a.button.secondary:focus-visible,
 button.button.secondary:hover,
 button.button.secondary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--light-color);
-  color: var(--dark-color);
+  border-color: rgb(255 255 255 / 60%);
+  background-color: rgb(255 255 255 / 10%);
+  color: var(--text-color);
 }
 
 a.button.secondary[aria-disabled="true"],
@@ -246,17 +250,17 @@ a.button.secondary[aria-disabled="true"]:focus-visible,
 button.button.secondary:disabled,
 button.button.secondary:disabled:hover,
 button.button.secondary:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+  background-color: transparent;
+  border-color: rgb(255 255 255 / 15%);
+  color: var(--text-color-subtle);
 }
 
-/* high-impact call-to-action */
+/* accent button - brand purple */
 a.button.accent,
 button.button.accent {
   border-color: var(--link-color);
   background-color: var(--link-color);
-  color: var(--background-color);
+  color: #fff;
 }
 
 a.button.accent:hover,
@@ -273,9 +277,9 @@ a.button.accent[aria-disabled="true"]:focus-visible,
 button.button.accent:disabled,
 button.button.accent:disabled:hover,
 button.button.accent:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+  background-color: #292929;
+  border-color: #292929;
+  color: var(--text-color-subtle);
 }
 
 main img {
@@ -316,10 +320,67 @@ main > .section:first-of-type {
   }
 }
 
-/* section metadata */
+/* section metadata - dark variant (darker than main background) */
+main .section.dark {
+  background-color: var(--dark-color);
+  margin: 0;
+  padding: 60px 0;
+}
+
+/* section metadata - light variant */
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
-  padding: 40px 0;
+  padding: 60px 0;
+}
+
+main .section.light h1,
+main .section.light h2,
+main .section.light h3,
+main .section.light h4,
+main .section.light h5,
+main .section.light h6,
+main .section.highlight h1,
+main .section.highlight h2,
+main .section.highlight h3,
+main .section.highlight h4,
+main .section.highlight h5,
+main .section.highlight h6 {
+  color: #0a0a0a;
+}
+
+main .section.light p,
+main .section.highlight p {
+  color: #6d7175;
+}
+
+main .section.light a:any-link,
+main .section.highlight a:any-link {
+  color: #0a0a0a;
+}
+
+main .section.light a.button.primary,
+main .section.highlight a.button.primary {
+  background-color: #0a0a0a;
+  border-color: #0a0a0a;
+  color: #fff;
+}
+
+main .section.light a.button.primary:hover,
+main .section.highlight a.button.primary:hover {
+  background-color: #222326;
+  border-color: #222326;
+}
+
+main .section.light a.button.secondary,
+main .section.highlight a.button.secondary {
+  border-color: rgb(10 10 10 / 30%);
+  color: #0a0a0a;
+}
+
+main .section.light a.button.secondary:hover,
+main .section.highlight a.button.secondary:hover {
+  border-color: rgb(10 10 10 / 60%);
+  background-color: rgb(10 10 10 / 5%);
 }
