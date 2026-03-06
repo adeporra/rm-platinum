@@ -64,6 +64,15 @@
   }
 }
 
+@media (width >= 1200px) {
+  :root {
+    --heading-font-size-xxl: 112px;
+    --heading-font-size-xl: 72px;
+    --heading-font-size-l: 40px;
+    --heading-font-size-m: 28px;
+  }
+}
+
 body {
   display: none;
   margin: 0;
@@ -72,7 +81,6 @@ body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.333;
-  letter-spacing: -0.02em;
 }
 
 body.appear {
