@@ -1,0 +1,146 @@
+{
+  "templates": [
+    {
+      "name": "platinum-landing",
+      "urls": [
+        "https://platinum.madridistas.com/es-es"
+      ],
+      "description": "Madridistas Platinum membership landing page with hero, pricing plans, benefits carousel, feature details, FAQ accordion, and CTA sections",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            "section#hero",
+            "section.framer-7udm7i .framer-1dbf18k"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            ".framer-54ignn",
+            "ul.framer--carousel"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".framer-15t9bnw",
+            ".framer-r73wlt",
+            ".framer-7eklff",
+            "section.framer-k3mkbh .framer-34b08d",
+            "section.framer-1d2aruc .framer-14qpfq",
+            "section.framer-1askbkw .framer-1wv5k5o"
+          ]
+        },
+        {
+          "name": "accordion",
+          "instances": [
+            ".framer-1vxdqaf"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1-hero",
+          "name": "Hero",
+          "selector": "section#hero",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2-pricing",
+          "name": "Todo lo que incluye Platinum",
+          "selector": "section#aldetalle",
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            "section#aldetalle h2",
+            "section#aldetalle .framer-1c8re90 h3"
+          ]
+        },
+        {
+          "id": "section-3-details",
+          "name": "Platinum al detalle",
+          "selector": "section#aldetalle-2",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": [
+            "section#aldetalle-2 h2"
+          ]
+        },
+        {
+          "id": "section-4-rmplay",
+          "name": "RM Play",
+          "selector": "section.framer-k3mkbh",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5-motivation",
+          "name": "Motivation",
+          "selector": "section.framer-1u7uig8",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "section.framer-1u7uig8 h2",
+            "section.framer-1u7uig8 p"
+          ]
+        },
+        {
+          "id": "section-6-wallet",
+          "name": "Wallet / Subscription",
+          "selector": "section.framer-1d2aruc",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7-welcome-pack",
+          "name": "Welcome Pack",
+          "selector": "section.framer-1askbkw",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8-faq",
+          "name": "FAQ",
+          "selector": "section.framer-1bmqxb9",
+          "style": null,
+          "blocks": [
+            "accordion"
+          ],
+          "defaultContent": [
+            "section.framer-1bmqxb9 h2",
+            "section.framer-1bmqxb9 .framer-hf713p p",
+            "section.framer-1bmqxb9 .framer-765mlr a"
+          ]
+        },
+        {
+          "id": "section-9-cta",
+          "name": "Final CTA",
+          "selector": "section.framer-7udm7i",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}
